@@ -33,11 +33,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.createTransButt = new System.Windows.Forms.Button();
+            this.idTxt = new System.Windows.Forms.TextBox();
+            this.amountTxt = new System.Windows.Forms.TextBox();
+            this.commentTxt = new System.Windows.Forms.TextBox();
+            this.transTypeBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -90,56 +90,57 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Transaction Type:";
             // 
-            // button1
+            // createTransButt
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(124)))), ((int)(((byte)(89)))));
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(185, 291);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 56);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Create";
-            this.button1.UseVisualStyleBackColor = false;
+            this.createTransButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
+            this.createTransButt.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(124)))), ((int)(((byte)(89)))));
+            this.createTransButt.FlatAppearance.BorderSize = 3;
+            this.createTransButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createTransButt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createTransButt.Location = new System.Drawing.Point(185, 291);
+            this.createTransButt.Name = "createTransButt";
+            this.createTransButt.Size = new System.Drawing.Size(119, 56);
+            this.createTransButt.TabIndex = 5;
+            this.createTransButt.Text = "Create";
+            this.createTransButt.UseVisualStyleBackColor = false;
+            this.createTransButt.Click += new System.EventHandler(this.createTransButt_Click);
             // 
-            // textBox1
+            // idTxt
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
-            this.textBox1.Location = new System.Drawing.Point(185, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(219, 22);
-            this.textBox1.TabIndex = 6;
+            this.idTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
+            this.idTxt.Location = new System.Drawing.Point(185, 87);
+            this.idTxt.Name = "idTxt";
+            this.idTxt.Size = new System.Drawing.Size(219, 22);
+            this.idTxt.TabIndex = 6;
             // 
-            // textBox2
+            // amountTxt
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
-            this.textBox2.Location = new System.Drawing.Point(185, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(219, 22);
-            this.textBox2.TabIndex = 7;
+            this.amountTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
+            this.amountTxt.Location = new System.Drawing.Point(185, 127);
+            this.amountTxt.Name = "amountTxt";
+            this.amountTxt.Size = new System.Drawing.Size(219, 22);
+            this.amountTxt.TabIndex = 7;
             // 
-            // textBox3
+            // commentTxt
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
-            this.textBox3.Location = new System.Drawing.Point(185, 208);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(219, 45);
-            this.textBox3.TabIndex = 8;
+            this.commentTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
+            this.commentTxt.Location = new System.Drawing.Point(185, 208);
+            this.commentTxt.Multiline = true;
+            this.commentTxt.Name = "commentTxt";
+            this.commentTxt.Size = new System.Drawing.Size(219, 45);
+            this.commentTxt.TabIndex = 8;
             // 
-            // comboBox1
+            // transTypeBox
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.transTypeBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
+            this.transTypeBox.FormattingEnabled = true;
+            this.transTypeBox.Items.AddRange(new object[] {
             "Debit",
             "Credit"});
-            this.comboBox1.Location = new System.Drawing.Point(185, 166);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(219, 24);
-            this.comboBox1.TabIndex = 9;
+            this.transTypeBox.Location = new System.Drawing.Point(185, 166);
+            this.transTypeBox.Name = "transTypeBox";
+            this.transTypeBox.Size = new System.Drawing.Size(219, 24);
+            this.transTypeBox.TabIndex = 9;
             // 
             // New_Transaction
             // 
@@ -147,11 +148,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(185)))));
             this.ClientSize = new System.Drawing.Size(514, 393);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.transTypeBox);
+            this.Controls.Add(this.commentTxt);
+            this.Controls.Add(this.amountTxt);
+            this.Controls.Add(this.idTxt);
+            this.Controls.Add(this.createTransButt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -161,6 +162,7 @@
             this.MinimizeBox = false;
             this.Name = "New_Transaction";
             this.Text = "New_Transaction";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.New_Transaction_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,10 +175,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button createTransButt;
+        private System.Windows.Forms.TextBox idTxt;
+        private System.Windows.Forms.TextBox amountTxt;
+        private System.Windows.Forms.TextBox commentTxt;
+        private System.Windows.Forms.ComboBox transTypeBox;
     }
 }

@@ -105,6 +105,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "EditComment";
             this.Text = "Edit Transaction Comment";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditComment_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

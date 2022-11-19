@@ -16,5 +16,10 @@ namespace Transactional_Application
         {
             InitializeComponent();
         }
+
+        private void EditComment_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == CloseReason.UserClosing;
+        }
     }
 }

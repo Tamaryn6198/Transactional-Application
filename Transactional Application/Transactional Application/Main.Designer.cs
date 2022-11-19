@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvClients = new System.Windows.Forms.DataGridView();
+            this.dgvTransactions = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,18 +38,18 @@
             this.editButt = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.filterClientsBox = new System.Windows.Forms.ComboBox();
+            this.clientValTxt = new System.Windows.Forms.TextBox();
+            this.orderClientsBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.orderTransactionsBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.transactionValTxt = new System.Windows.Forms.TextBox();
+            this.filterTransactionsBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -62,29 +62,30 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Clients";
             // 
-            // dataGridView1
+            // dgvClients
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(176)))), ((int)(((byte)(171)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(176)))), ((int)(((byte)(171)))));
-            this.dataGridView1.Location = new System.Drawing.Point(12, 58);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(826, 135);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvClients.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(176)))), ((int)(((byte)(171)))));
+            this.dgvClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClients.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(176)))), ((int)(((byte)(171)))));
+            this.dgvClients.Location = new System.Drawing.Point(12, 58);
+            this.dgvClients.Name = "dgvClients";
+            this.dgvClients.RowHeadersWidth = 51;
+            this.dgvClients.RowTemplate.Height = 24;
+            this.dgvClients.Size = new System.Drawing.Size(826, 135);
+            this.dgvClients.TabIndex = 1;
+            this.dgvClients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClients_CellClick);
             // 
-            // dataGridView2
+            // dgvTransactions
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(176)))), ((int)(((byte)(171)))));
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(176)))), ((int)(((byte)(171)))));
-            this.dataGridView2.Location = new System.Drawing.Point(12, 249);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(826, 135);
-            this.dataGridView2.TabIndex = 3;
+            this.dgvTransactions.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(176)))), ((int)(((byte)(171)))));
+            this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTransactions.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(176)))), ((int)(((byte)(171)))));
+            this.dgvTransactions.Location = new System.Drawing.Point(12, 249);
+            this.dgvTransactions.Name = "dgvTransactions";
+            this.dgvTransactions.RowHeadersWidth = 51;
+            this.dgvTransactions.RowTemplate.Height = 24;
+            this.dgvTransactions.Size = new System.Drawing.Size(826, 135);
+            this.dgvTransactions.TabIndex = 3;
             // 
             // label2
             // 
@@ -123,12 +124,13 @@
             this.createButt.FlatAppearance.BorderSize = 3;
             this.createButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createButt.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createButt.Location = new System.Drawing.Point(670, 396);
+            this.createButt.Location = new System.Drawing.Point(670, 392);
             this.createButt.Name = "createButt";
-            this.createButt.Size = new System.Drawing.Size(141, 54);
+            this.createButt.Size = new System.Drawing.Size(141, 63);
             this.createButt.TabIndex = 6;
             this.createButt.Text = "Create Transaction";
             this.createButt.UseVisualStyleBackColor = false;
+            this.createButt.Click += new System.EventHandler(this.createButt_Click);
             // 
             // editButt
             // 
@@ -164,34 +166,36 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Value:";
             // 
-            // comboBox1
+            // filterClientsBox
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(242, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(118, 23);
-            this.comboBox1.TabIndex = 10;
+            this.filterClientsBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
+            this.filterClientsBox.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterClientsBox.FormattingEnabled = true;
+            this.filterClientsBox.Location = new System.Drawing.Point(242, 23);
+            this.filterClientsBox.Name = "filterClientsBox";
+            this.filterClientsBox.Size = new System.Drawing.Size(118, 23);
+            this.filterClientsBox.TabIndex = 10;
+            this.filterClientsBox.SelectedIndexChanged += new System.EventHandler(this.filterClientsBox_SelectedIndexChanged);
             // 
-            // textBox1
+            // clientValTxt
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(424, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 22);
-            this.textBox1.TabIndex = 11;
+            this.clientValTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
+            this.clientValTxt.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientValTxt.Location = new System.Drawing.Point(424, 25);
+            this.clientValTxt.Name = "clientValTxt";
+            this.clientValTxt.Size = new System.Drawing.Size(150, 22);
+            this.clientValTxt.TabIndex = 11;
             // 
-            // comboBox2
+            // orderClientsBox
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
-            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(720, 23);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(118, 23);
-            this.comboBox2.TabIndex = 13;
+            this.orderClientsBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
+            this.orderClientsBox.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderClientsBox.FormattingEnabled = true;
+            this.orderClientsBox.Location = new System.Drawing.Point(720, 23);
+            this.orderClientsBox.Name = "orderClientsBox";
+            this.orderClientsBox.Size = new System.Drawing.Size(118, 23);
+            this.orderClientsBox.TabIndex = 13;
+            this.orderClientsBox.SelectedIndexChanged += new System.EventHandler(this.orderClientsBox_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -203,15 +207,16 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Order by:";
             // 
-            // comboBox3
+            // orderTransactionsBox
             // 
-            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
-            this.comboBox3.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(720, 211);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(118, 23);
-            this.comboBox3.TabIndex = 19;
+            this.orderTransactionsBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
+            this.orderTransactionsBox.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderTransactionsBox.FormattingEnabled = true;
+            this.orderTransactionsBox.Location = new System.Drawing.Point(720, 211);
+            this.orderTransactionsBox.Name = "orderTransactionsBox";
+            this.orderTransactionsBox.Size = new System.Drawing.Size(118, 23);
+            this.orderTransactionsBox.TabIndex = 19;
+            this.orderTransactionsBox.SelectedIndexChanged += new System.EventHandler(this.orderTransactionsBox_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -223,24 +228,25 @@
             this.label8.TabIndex = 18;
             this.label8.Text = "Order by:";
             // 
-            // textBox2
+            // transactionValTxt
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(424, 213);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 22);
-            this.textBox2.TabIndex = 17;
+            this.transactionValTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
+            this.transactionValTxt.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactionValTxt.Location = new System.Drawing.Point(424, 213);
+            this.transactionValTxt.Name = "transactionValTxt";
+            this.transactionValTxt.Size = new System.Drawing.Size(150, 22);
+            this.transactionValTxt.TabIndex = 17;
             // 
-            // comboBox4
+            // filterTransactionsBox
             // 
-            this.comboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
-            this.comboBox4.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(242, 211);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(118, 23);
-            this.comboBox4.TabIndex = 16;
+            this.filterTransactionsBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(192)))), ((int)(((byte)(169)))));
+            this.filterTransactionsBox.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterTransactionsBox.FormattingEnabled = true;
+            this.filterTransactionsBox.Location = new System.Drawing.Point(242, 211);
+            this.filterTransactionsBox.Name = "filterTransactionsBox";
+            this.filterTransactionsBox.Size = new System.Drawing.Size(118, 23);
+            this.filterTransactionsBox.TabIndex = 16;
+            this.filterTransactionsBox.SelectedIndexChanged += new System.EventHandler(this.filterTransactionsBox_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -268,33 +274,35 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(185)))));
             this.ClientSize = new System.Drawing.Size(863, 542);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.orderTransactionsBox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.transactionValTxt);
+            this.Controls.Add(this.filterTransactionsBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.orderClientsBox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.clientValTxt);
+            this.Controls.Add(this.filterClientsBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.editButt);
             this.Controls.Add(this.createButt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvTransactions);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvClients);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
             this.Text = "Main";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.VisibleChanged += new System.EventHandler(this.Main_VisibleChanged);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,8 +311,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvClients;
+        private System.Windows.Forms.DataGridView dgvTransactions;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -312,14 +320,14 @@
         private System.Windows.Forms.Button editButt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox filterClientsBox;
+        private System.Windows.Forms.TextBox clientValTxt;
+        private System.Windows.Forms.ComboBox orderClientsBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox orderTransactionsBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TextBox transactionValTxt;
+        private System.Windows.Forms.ComboBox filterTransactionsBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
     }
